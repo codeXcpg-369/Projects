@@ -1,0 +1,65 @@
+<mvc:View controllerName="app.capgeminipostb27.controller.FlightView"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:comp="sap.ui.comp.filterbar"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+  <content />
+  <comp:FilterBar>
+        <comp:filterItems>
+            <comp:FilterItem name="filter CarrID">
+                <comp:control>
+        <Input id= "idFiltercarr" placeholder="filter CarrID" liveChange="onSearch"></Input>
+                </comp:control>
+            </comp:FilterItem>
+            <comp:FilterItem name="filter BookID">
+            <comp:control>
+        <Input id= "idFilterBook" placeholder="filter BookID" liveChange="onSearch"></Input>
+            </comp:control>
+            </comp:FilterItem>
+            </comp:filterItems>
+        </comp:FilterBar>
+ 
+<Table id="idFlightTab" items="{FlightDetails>/}" mode="SingleSelectMaster" selectionChange="onRowSelection" >
+            <columns>
+                <Column >
+                    <Text text="{i18n>carrid}"></Text>
+                </Column>
+                <Column >
+                    <Text text="{i18n>connid}"></Text>
+                </Column>
+                <Column >
+                    <Text text="{i18n>bookid}"></Text>
+                </Column>
+                <Column >
+                    <Text text="{i18n>fldate}"></Text>
+                </Column>
+                <Column >
+                    <Text text="{i18n>orddate}"></Text>
+                </Column>
+                <Column >
+                    <Text text="{i18n>Action}"></Text>
+                </Column>
+            </columns>
+            <ColumnListItem >
+                <cells>
+                    <Text text="{FlightDetails>Carrid}"></Text>
+                    <Text text="{FlightDetails>Connid}"></Text>
+                    <Text text="{FlightDetails>Bookid}"></Text>
+                    <Text text="{FlightDetails>Fldate}" ></Text>
+                    <Text text="{FlightDetails>OrderDate}"></Text>
+                    <!-- <Text text="{path:'FlightDetails>OrderDate', type:'sap.ui.model.type.Date', formatOptions:{pattern:'dd-MM-yyyy'} }"></Text> -->
+                    <Button icon="sap-icon://delete" press="onDelete"></Button>
+
+                </cells>
+            </ColumnListItem>
+        </Table>
+        <footer>
+            <OverflowToolbar >
+                <ToolbarSpacer />
+                <Button text="{i18n>Create}" press="onCreate"></Button>
+            </OverflowToolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

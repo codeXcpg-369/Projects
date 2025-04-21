@@ -1,0 +1,158 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "app.capgeminipostb27",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.17.3",
+      "toolsId": "886b4acc-8fbe-4f44-8cc6-06bed9e7814f"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/Z9311_VSPRINT1_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "flightdata27-create": {
+          "semanticObject": "flightdata27",
+          "action": "create",
+          "title": "{{flightdata27-create.flpTitle}}",
+          "subTitle": "{{flightdata27-create.flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.134.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "app.capgeminipostb27.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "app.capgeminipostb27.view",
+        "async": true,
+        "viewPath": "app.capgeminipostb27.view"
+      },
+      "routes": [
+        {
+          "name": "RouteFlightView",
+          "pattern": ":?query:",
+          "target": [
+            "TargetFlightView"
+          ]
+        },
+        {
+          "name": "RouteCreateView",
+          "pattern": "create",
+          "target": [
+            "TargetCreateView"
+          ]
+        },
+        {
+          "name": "RouteDetailView",
+          "pattern": "detail/{indexDetail}",
+          "target": [
+            "TargetDetailView"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetFlightView": {
+          "id": "FlightView",
+          "name": "FlightView"
+        },
+        "TargetCreateView": {
+          "transition":"slide",
+          "viewId":"idCreate",
+          "viewName":"CreateView"
+          
+        },
+        "TargetDetailView": {
+          "transition":"slide",
+          "viewId":"idDetail",
+          "viewName":"DetailView"
+          
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "app.capgeminipostb27.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "appcapgeminipostb27"
+  }
+}

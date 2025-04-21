@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "b27vishwapg",
+			"path": "../b27vishwapg"
+		},
+		{
+			"name": "splitapp",
+			"path": "../splitapp"
+		},
+		{
+			"name": "cdsviewflightdetails27",
+			"path": "../cdsviewflightdetails27"
+		},
+		{
+			"name": "capgeminipost27",
+			"path": "../capgeminipost27"
+		}
+	]
+}

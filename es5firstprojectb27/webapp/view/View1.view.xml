@@ -1,0 +1,29 @@
+<mvc:View
+    controllerName="app.es5firstprojectb27.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <ComboBox
+                items="{/BusinessPartnerSet}"
+                selectionChange="onSelectItem"
+            >
+                <items>
+                    <core:Item
+                        key="{BusinessPartnerID}"
+                        text="{BusinessPartnerID}"
+                    />
+                </items>
+            </ComboBox>
+
+
+
+        </content>
+    </Page>
+</mvc:View>

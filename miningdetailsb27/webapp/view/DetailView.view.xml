@@ -1,0 +1,39 @@
+<mvc:View controllerName="app.miningdetailsb27.controller.DetailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:comp="sap.ui.comp.filterbar">
+    <Page id="idDetail1" title="Details of Mining " showNavButton="true" navButtonPress="onListView">
+        <content>
+            <f:SimpleForm editable="true" class="formm">
+                <Label text="Mining Name" class="bold-class" design="Bold"/>
+                <Text text="{miningsModel>mine_name}" class="text-class"/>
+                <Label text="Location" class="bold-class"/>
+                <Text text="{miningsModel>location}" class="text-class"/>
+                 <Label text="Production Capacity" design="Bold" class="bold-class"/>
+                <Text text="{miningsModel>production_capacity}" class="text-class"/>
+                <Image src="{miningsModel>image}" width="250px" height="250px" class="imgg" tooltip="Mining Image"/>
+            </f:SimpleForm>
+            <IconTabBar>
+                <items>
+                    <IconTabFilter icon="sap-icon://information">
+                        <VBox class="vbox-class">
+                            <HBox class="hbox-class">
+                                <Label text="Mineral Type :" design="Bold" class="bold-class"/>
+                                <Text text="{miningsModel>mineral_type}" class="text-class"/>
+                            </HBox>
+                            <HBox class="hbox-class">
+                                <Label text="Last Inception Date :" design="Bold" class="bold-class"/>
+                                <Text text="{miningsModel>last_inspection_date}" class="text-class"/>
+                            </HBox>
+                            <HBox class="hbox-class">
+                                <Label text="Status :" class="bold-class"/>
+                                <Text text="{miningsModel>operational_status}" class="text-class" state="{= ${miningsModel>operational_status} === 'Active' ? 'Success':'Error'}"/>
+                            </HBox>
+                        </VBox>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

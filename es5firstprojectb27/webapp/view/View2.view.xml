@@ -1,0 +1,51 @@
+<mvc:View
+    controllerName="app.es5firstprojectb27.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page2"
+        title="View 2 Page"
+    >
+        <content>
+
+            <Table items="{SalesOrderModel>/}" id="idTab">
+                <columns>
+                    <Column >
+                        <Text text="{i18n>SOID}"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>Cname}"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>curr}"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>Gm}"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>Tax}"></Text>
+                    </Column>
+                </columns>
+
+                <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{SalesOrderModel>CustomerID}"></Text>
+                                <Text text="{SalesOrderModel>CustomerName}"></Text>
+                                <Text text="{SalesOrderModel>CurrencyCode}"></Text>
+                                <Text text="{SalesOrderModel>GrossAmount}"></Text>
+                                <Text text="{SalesOrderModel>TaxAmount}"></Text>
+                            </cells>
+                         </ColumnListItem>
+                </items>
+              
+            </Table>
+
+
+
+        </content>
+    </Page>
+</mvc:View>
